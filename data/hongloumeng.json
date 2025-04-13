@@ -128,35 +128,35 @@
     },
     {
       "id": "贾母",
-      "group": "贾府长辈",
+      "group": "贾府",
       "family": "贾府",
       "description": "贾代善之妻，贾赦、贾政之母，贾府的实际掌权者，慈爱宽厚，尤其疼爱贾宝玉。",
       "image": "jiamuImg.jpg"
     },
     {
       "id": "贾政",
-      "group": "贾府长辈",
+      "group": "贾府",
       "family": "贾府",
       "description": "贾母次子，贾宝玉之父，为官清正，严厉正派，与贾宝玉性格相悖。",
       "image": "jiazhengImg.jpg"
     },
     {
       "id": "贾赦",
-      "group": "贾府长辈",
+      "group": "贾府",
       "family": "贾府",
       "description": "贾母长子，贾琏之父，性格淫佚，贪财好色。",
       "image": "jiasheImg.jpg"
     },
     {
       "id": "王夫人",
-      "group": "贾府长辈",
+      "group": "贾府",
       "family": "贾府",
       "description": "贾政之妻，贾宝玉、贾元春之母，性格端庄严肃，重视礼教。",
       "image": "wangfurenImg.jpg"
     },
     {
       "id": "邢夫人",
-      "group": "贾府长辈",
+      "group": "贾府",
       "family": "贾府",
       "description": "贾赦之妻，贾琏之母，性格软弱，在家中地位不高。",
       "image": "xingfurenImg.jpg"
@@ -330,13 +330,6 @@
       "image": "xiaohongImg.jpg"
     },
     {
-      "id": "金桂",
-      "group": "薛府",
-      "family": "薛府",
-      "description": "薛蟠的妻子，泼辣刁蛮，与薛家人关系紧张。",
-      "image": "jinguiImg.jpg"
-    },
-    {
       "id": "夏金桂",
       "group": "薛府",
       "family": "薛府",
@@ -373,14 +366,14 @@
     },
     {
       "id": "贾代善",
-      "group": "贾府长辈",
+      "group": "贾府",
       "family": "贾府",
       "description": "贾母之夫，贾赦、贾政之父，早逝。",
       "image": "jiadaishanImg.jpg"
     },
     {
       "id": "贾代化",
-      "group": "贾府长辈",
+      "group": "贾府",
       "family": "贾府",
       "description": "贾代善之兄，贾珍之父，早逝。",
       "image": "jiadaihuaImg.jpg"

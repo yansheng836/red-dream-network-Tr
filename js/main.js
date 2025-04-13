@@ -110,10 +110,12 @@ function renderGraph(data) {
 
     // 创建力导向模拟
     simulation = d3.forceSimulation(data.nodes)
-        .force('link', d3.forceLink(data.links).id(d => d.id).distance(100))
-        .force('charge', d3.forceManyBody().strength(-300))
-        .force('center', d3.forceCenter(width / 2, height / 2))
-        .force('collide', d3.forceCollide().radius(30));
+        .force('link', d3.forceLink(data.links).id(d => d.id).distance(10)) // 减小连接距离
+        .force('charge', d3.forceManyBody().strength(-500)) // 减小节点间斥力
+        .force('center', d3.forceCenter(width / 2, height / 2).strength(0.15)) // 增加中心引力
+        .force('collide', d3.forceCollide().radius(30)) // 减小碰撞半径
+        .force('x', d3.forceX(width / 2).strength(0.1)) // 添加X方向引力
+        .force('y', d3.forceY(height / 2).strength(0.1)); // 添加Y方向引力
 
     // 绘制连线
     const link = container.append('g')
@@ -144,7 +146,10 @@ function renderGraph(data) {
 
     // 添加节点圆圈
     node.append('circle')
-        .attr('r', 10)
+        .attr('r', d => {
+            // 主要人物使用较大半径，次要人物使用较小半径
+            return d.group === '次要角色' ? 7 : 10;
+        })
         .attr('fill', d => {
             // 如果节点分组在我们定义的颜色映射中，则使用对应颜色
             if (groupColors[d.group]) {
@@ -154,17 +159,39 @@ function renderGraph(data) {
             return groupColors['次要角色'];
         })
         .attr('stroke', '#fff')
-        .attr('stroke-width', 2);
+        .attr('stroke-width', d => d.group === '次要角色' ? 1 : 2);
 
     // 添加节点文本
     node.append('text')
-        .attr('dy', 20)
+        .attr('dy', d => d.group === '次要角色' ? 15 : 20) // 次要人物文本更靠近节点
         .attr('text-anchor', 'middle')
         .text(d => d.id)
-        .attr('font-size', '10px');
+        .attr('font-size', d => d.group === '次要角色' ? '8px' : '10px'); // 次要人物文本更小
 
     // 更新模拟
     simulation.on('tick', () => {
+        // 边界检测，防止节点移出可视区域
+        data.nodes.forEach(d => {
+            // 为次要人物节点添加额外的中心引力
+            if (d.group === '次要角色') {
+                // 计算到中心的距离
+                const dx = d.x - width / 2;
+                const dy = d.y - height / 2;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                // 如果距离中心太远，施加额外引力
+                if (distance > Math.min(width, height) / 3) {
+                    d.x -= dx * 0.03;
+                    d.y -= dy * 0.03;
+                }
+            }
+            
+            // 边界约束，确保节点在容器内
+            const r = 15; // 节点半径加一些边距
+            d.x = Math.max(r, Math.min(width - r, d.x));
+            d.y = Math.max(r, Math.min(height - r, d.y));
+        });
+        
         link
             .attr('x1', d => d.source.x)
             .attr('y1', d => d.source.y)
@@ -174,6 +201,7 @@ function renderGraph(data) {
         node
             .attr('transform', d => `translate(${d.x},${d.y})`);
     });
+
 }
 
 // 节点拖拽函数
@@ -259,14 +287,16 @@ function showInfoPanel(node) {
 // 高亮相关连接
 function highlightConnections(node) {
     // 重置所有节点和连线的样式
-    container.selectAll('.node circle').attr('r', 10).attr('stroke-width', 2);
+    container.selectAll('.node circle')
+        .attr('r', d => d.group === '次要角色' ? 7 : 10)
+        .attr('stroke-width', d => d.group === '次要角色' ? 1 : 2);
     container.selectAll('.link').attr('stroke-opacity', 0.6);
 
     // 高亮选中的节点
     container.selectAll('.node')
         .filter(d => d.id === node.id)
         .select('circle')
-        .attr('r', 15)
+        .attr('r', d => d.group === '次要角色' ? 12 : 15)
         .attr('stroke-width', 3);
 
     // 高亮相关连接和节点
@@ -278,6 +308,9 @@ function highlightConnections(node) {
     container.selectAll('.link')
         .attr('stroke-opacity', d => {
             return connectedLinks.includes(d) ? 1 : 0.1;
+        })
+        .style('filter', d => {
+            return connectedLinks.includes(d) ? 'none' : 'saturate(0%)';
         });
 
     // 获取与选中节点直接相连的节点ID集合
@@ -434,11 +467,20 @@ function addEventListeners() {
 
     // 关系类型筛选
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-        checkbox.addEventListener('change', applyFilters);
+        checkbox.addEventListener('change', function(event) {
+            // 如果用户选中了一个复选框，取消选中其他复选框
+            if (event.target.checked) {
+                document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                    if (cb !== event.target) {
+                        cb.checked = false;
+                    }
+                });
+            }
+            applyFilters();
+        });
     });
 
-    // 家族筛选
-    document.getElementById('family-select').addEventListener('change', applyFilters);
+    // 家族筛选功能已移除
 
     // 点击空白处重置
     svg.on('click', () => {
@@ -462,8 +504,8 @@ function addEventListeners() {
 // 重置高亮
 function resetHighlight() {
     container.selectAll('.node circle')
-        .attr('r', 10)
-        .attr('stroke-width', 2)
+        .attr('r', d => d.group === '次要角色' ? 7 : 10)
+        .attr('stroke-width', d => d.group === '次要角色' ? 1 : 2)
         .attr('stroke-opacity', 1)
         .attr('fill-opacity', 1)
         .style('filter', 'none');
@@ -472,7 +514,8 @@ function resetHighlight() {
         .attr('opacity', 1);
 
     container.selectAll('.link')
-        .attr('stroke-opacity', 0.6);
+        .attr('stroke-opacity', 0.6)
+        .style('filter', 'none');
 }
 
 // 重置视图
@@ -485,9 +528,9 @@ function resetView() {
 
     // 重置筛选器
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-        checkbox.checked = true;
+        checkbox.checked = false;
     });
-    document.getElementById('family-select').value = 'all';
+    // 家族筛选已移除
     document.getElementById('search').value = '';
 
     // 重新渲染图形
@@ -539,41 +582,25 @@ function applyFilters() {
     const selectedRelationTypes = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
         .map(checkbox => checkbox.value);
 
-    // 获取选中的家族或分组
-    const selectedGroup = document.getElementById('family-select').value;
-
     // 筛选连线
-    let filteredLinks = graph.links.filter(link => 
-        selectedRelationTypes.includes(link.type)
-    );
+    let filteredLinks;
+    if (selectedRelationTypes.length === 0) {
+        // 如果没有选中任何关系类型，显示所有关系
+        filteredLinks = [...graph.links];
+    } else {
+        // 否则只显示选中的关系类型
+        filteredLinks = graph.links.filter(link => 
+            selectedRelationTypes.includes(link.type)
+        );
+    }
 
     // 筛选节点
     let nodeIds = new Set();
-    if (selectedGroup !== 'all') {
-        // 先找出属于选定分组的节点
-        // 处理group和family字段，兼容旧数据
-        const groupNodes = graph.nodes.filter(node => 
-            node.group === selectedGroup || node.family === selectedGroup
-        );
-        groupNodes.forEach(node => nodeIds.add(node.id));
-
-        // 然后筛选连线，至少有一端是选定分组的节点
-        filteredLinks = filteredLinks.filter(link => 
-            nodeIds.has(link.source.id || link.source) || nodeIds.has(link.target.id || link.target)
-        );
-
-        // 更新节点集合，包含所有连线涉及的节点
-        filteredLinks.forEach(link => {
-            nodeIds.add(link.source.id || link.source);
-            nodeIds.add(link.target.id || link.target);
-        });
-    } else {
-        // 如果选择全部，则包含所有连线涉及的节点
-        filteredLinks.forEach(link => {
-            nodeIds.add(link.source.id || link.source);
-            nodeIds.add(link.target.id || link.target);
-        });
-    }
+    // 包含所有连线涉及的节点
+    filteredLinks.forEach(link => {
+        nodeIds.add(link.source.id || link.source);
+        nodeIds.add(link.target.id || link.target);
+    });
 
     const filteredNodes = graph.nodes.filter(node => nodeIds.has(node.id));
 
@@ -619,16 +646,16 @@ function updateGraph(filteredData) {
         .on('mouseout', handleNodeMouseOut);
 
     nodeEnter.append('circle')
-        .attr('r', 10)
-        .attr('fill', d => groupColors[d.group] || groupColors['其他'])
+        .attr('r', d => d.group === '次要角色' ? 7 : 10)
+        .attr('fill', d => groupColors[d.group] || groupColors['次要角色'])
         .attr('stroke', '#fff')
-        .attr('stroke-width', 2);
+        .attr('stroke-width', d => d.group === '次要角色' ? 1 : 2);
 
     nodeEnter.append('text')
-        .attr('dy', 20)
+        .attr('dy', d => d.group === '次要角色' ? 15 : 20)
         .attr('text-anchor', 'middle')
         .text(d => d.id)
-        .attr('font-size', '10px');
+        .attr('font-size', d => d.group === '次要角色' ? '8px' : '10px');
 
     // 重启模拟
     simulation.nodes(filteredData.nodes);
