@@ -1,0 +1,1350 @@
+{
+  "nodes": [
+    {
+      "id": "贾宝玉",
+      "group": "主角",
+      "family": "贾府",
+      "description": "贾政与王夫人之子，荣国府嫡孙，性情天真烂漫，最怜惜女儿们，厌恶功名利禄，后出家为僧。",
+      "image": "baoyuImg.jpg"
+    },
+    {
+      "id": "林黛玉",
+      "group": "金陵十二钗正册",
+      "family": "林府",
+      "description": "林如海与贾敏之女，贾母外孙女，自幼父母双亡，被接到贾府居住。性情孤傲，多愁善感，与贾宝玉青梅竹马，互生情愫，最终郁郁而终。",
+      "image": "daiyuImg.jpg"
+    },
+    {
+      "id": "薛宝钗",
+      "group": "金陵十二钗正册",
+      "family": "薛府",
+      "description": "薛姨妈之女，薛蟠之妹，端庄大方，知书达理，精明能干，最终与贾宝玉成婚。",
+      "image": "baochiImg.jpg"
+    },
+    {
+      "id": "王熙凤",
+      "group": "金陵十二钗正册",
+      "family": "贾府",
+      "description": "贾琏之妻，王夫人的内侄女，掌管贾府内务，精明强干，善于权术，刁钻狠毒。",
+      "image": "fengImg.jpg"
+    },
+    {
+      "id": "贾元春",
+      "group": "金陵十二钗正册",
+      "family": "贾府",
+      "description": "贾政与贾母嫡女，贾宝玉同父异母的姐姐，后被选入宫中，封为贵妃。",
+      "image": "yuanchuImg.jpg"
+    },
+    {
+      "id": "贾探春",
+      "group": "金陵十二钗正册",
+      "family": "贾府",
+      "description": "贾政与妾室所生女儿，贾宝玉的妹妹，性格爽朗，有主见，有改革精神，后被送往西藏和亲。",
+      "image": "tanchuImg.jpg"
+    },
+    {
+      "id": "史湘云",
+      "group": "金陵十二钗正册",
+      "family": "史府",
+      "description": "贾母的内侄孙女，父母双亡，性格爽朗豪爽，不拘小节，与贾宝玉、林黛玉交好。",
+      "image": "xiangyunImg.jpg"
+    },
+    {
+      "id": "妙玉",
+      "group": "金陵十二钗正册",
+      "family": "栊翠庵",
+      "description": "栊翠庵中的女尼，出身富贵，因故出家，性格孤高，清雅脱俗，与贾宝玉有精神共鸣。",
+      "image": "miaoyuImg.jpg"
+    },
+    {
+      "id": "贾迎春",
+      "group": "金陵十二钗正册",
+      "family": "贾府",
+      "description": "贾赦与妾室所生女儿，贾宝玉的堂姐，性格懦弱，唯唯诺诺，后被嫁给孙绍祖，遭受虐待而死。",
+      "image": "yingchuImg.jpg"
+    },
+    {
+      "id": "贾惜春",
+      "group": "金陵十二钗正册",
+      "family": "贾府",
+      "description": "贾珍之妹，贾宝玉的堂妹，性格冷淡，不愿与人交往，后出家为尼。",
+      "image": "xichuImg.jpg"
+    },
+    {
+      "id": "李纨",
+      "group": "金陵十二钗正册",
+      "family": "贾府",
+      "description": "贾珠之妻，贾宝玉的嫂子，早年守寡，主持贾府女儿们的教育，性格温和贤惠。",
+      "image": "liwanImg.jpg"
+    },
+    {
+      "id": "秦可卿",
+      "group": "金陵十二钗正册",
+      "family": "贾府",
+      "description": "贾蓉之妻，贾珍的儿媳，美貌端庄，早年夭亡，其丧事揭开了贾府衰败的序幕。",
+      "image": "keqingImg.jpg"
+    },
+    {
+      "id": "巧姐",
+      "group": "金陵十二钗副册",
+      "family": "贾府",
+      "description": "王熙凤与贾琏之女，贾府衰败后被卖为人妾。",
+      "image": "qiaojieImg.jpg"
+    },
+    {
+      "id": "香菱",
+      "group": "金陵十二钗副册",
+      "family": "薛府",
+      "description": "原名甄英莲，被薛蟠买下为妾，后学诗文，与贾宝玉等人交好。",
+      "image": "xianglingImg.jpg"
+    },
+    {
+      "id": "袭人",
+      "group": "金陵十二钗副册",
+      "family": "贾府",
+      "description": "贾宝玉的贴身丫鬟，原名花珍珠，温柔体贴，深得王夫人信任。",
+      "image": "xirenImg.jpg"
+    },
+    {
+      "id": "鸳鸯",
+      "group": "金陵十二钗副册",
+      "family": "贾府",
+      "description": "贾母的贴身丫鬟，忠心耿耿，曾拒绝贾赦纳为妾室，贾母死后自缢殉主。",
+      "image": "yuanyangImg.jpg"
+    },
+    {
+      "id": "晴雯",
+      "group": "金陵十二钗副册",
+      "family": "贾府",
+      "description": "贾宝玉房中的丫鬟，性格刚烈，聪明伶俐，因与王夫人起冲突被逐出府，后病死。",
+      "image": "qingwenImg.jpg"
+    },
+    {
+      "id": "麝月",
+      "group": "金陵十二钗副册",
+      "family": "贾府",
+      "description": "贾宝玉房中的丫鬟，性格温和，做事认真，与袭人、晴雯并称宝玉房中的三大丫鬟。",
+      "image": "sheyueImg.jpg"
+    },
+    {
+      "id": "贾母",
+      "group": "贾府长辈",
+      "family": "贾府",
+      "description": "贾代善之妻，贾赦、贾政之母，贾府的实际掌权者，慈爱宽厚，尤其疼爱贾宝玉。",
+      "image": "jiamuImg.jpg"
+    },
+    {
+      "id": "贾政",
+      "group": "贾府长辈",
+      "family": "贾府",
+      "description": "贾母次子，贾宝玉之父，为官清正，严厉正派，与贾宝玉性格相悖。",
+      "image": "jiazhengImg.jpg"
+    },
+    {
+      "id": "贾赦",
+      "group": "贾府长辈",
+      "family": "贾府",
+      "description": "贾母长子，贾琏之父，性格淫佚，贪财好色。",
+      "image": "jiasheImg.jpg"
+    },
+    {
+      "id": "王夫人",
+      "group": "贾府长辈",
+      "family": "贾府",
+      "description": "贾政之妻，贾宝玉、贾元春之母，性格端庄严肃，重视礼教。",
+      "image": "wangfurenImg.jpg"
+    },
+    {
+      "id": "邢夫人",
+      "group": "贾府长辈",
+      "family": "贾府",
+      "description": "贾赦之妻，贾琏之母，性格软弱，在家中地位不高。",
+      "image": "xingfurenImg.jpg"
+    },
+    {
+      "id": "贾珍",
+      "group": "贾府",
+      "family": "贾府",
+      "description": "贾代化之子，宁国府现任家主，贾蓉之父，为人奢侈淫佚。",
+      "image": "jiazhenImg.jpg"
+    },
+    {
+      "id": "贾琏",
+      "group": "贾府",
+      "family": "贾府",
+      "description": "贾赦之子，王熙凤之夫，好色风流，但也有能力处理家务。",
+      "image": "jialianImg.jpg"
+    },
+    {
+      "id": "贾蓉",
+      "group": "贾府",
+      "family": "贾府",
+      "description": "贾珍之子，秦可卿之夫，为人阿谀奉承，没有主见。",
+      "image": "jiarongImg.jpg"
+    },
+    {
+      "id": "贾环",
+      "group": "贾府",
+      "family": "贾府",
+      "description": "贾政与赵姨娘所生之子，贾宝玉同父异母的弟弟，嫉妒贾宝玉，曾设计害他。",
+      "image": "jiahuanImg.jpg"
+    },
+    {
+      "id": "贾兰",
+      "group": "贾府",
+      "family": "贾府",
+      "description": "贾珠与李纨之子，贾宝玉的侄子，聪明好学，最终考取功名，振兴家业。",
+      "image": "jialanImg.jpg"
+    },
+    {
+      "id": "贾芸",
+      "group": "贾府旁支",
+      "family": "贾府",
+      "description": "贾府旁支子弟，曾得到王熙凤的帮助承包贾府工程。",
+      "image": "jiayunImg.jpg"
+    },
+    {
+      "id": "贾蔷",
+      "group": "贾府旁支",
+      "family": "贾府",
+      "description": "贾府旁支子弟，曾参与宁国府的丧事操办。",
+      "image": "jiaqiangImg.jpg"
+    },
+    {
+      "id": "薛姨妈",
+      "group": "薛府",
+      "family": "薛府",
+      "description": "王夫人之妹，薛蟠、薛宝钗之母，寡居经商，与贾府关系密切。",
+      "image": "xueyimaImg.jpg"
+    },
+    {
+      "id": "薛蟠",
+      "group": "薛府",
+      "family": "薛府",
+      "description": "薛姨妈之子，薛宝钗之兄，为人纨绔，好色斗狠，曾误杀人命。",
+      "image": "xuepanImg.jpg"
+    },
+    {
+      "id": "甄士隐",
+      "group": "其他",
+      "family": "甄府",
+      "description": "小说开篇人物，曾收养英莲（后为香菱），家道中落后隐居。",
+      "image": "zhenshiyinImg.jpg"
+    },
+    {
+      "id": "贾雨村",
+      "group": "其他",
+      "family": "其他",
+      "description": "小说开篇人物，曾受甄士隐资助，后为官，与贾府有交往，为人势利。",
+      "image": "jiayucunImg.jpg"
+    },
+    {
+      "id": "刘姥姥",
+      "group": "其他",
+      "family": "其他",
+      "description": "乡下老妇人，与王熙凤有远亲关系，曾两次到贾府求助，幽默风趣。",
+      "image": "liulaolaImg.jpg"
+    },
+    {
+      "id": "柳湘莲",
+      "group": "其他",
+      "family": "其他",
+      "description": "薛蟠的朋友，曾与香菱有婚约，性格正直，厌恶世俗。",
+      "image": "liuxianglianImg.jpg"
+    },
+    {
+      "id": "蒋玉菡",
+      "group": "其他",
+      "family": "其他",
+      "description": "又名蒋玉函，优伶出身，与贾宝玉交好。",
+      "image": "jiangyuhanImg.jpg"
+    },
+    {
+      "id": "林如海",
+      "group": "林府",
+      "family": "林府",
+      "description": "林黛玉之父，贾敏之夫，曾为扬州盐政，为人正直。",
+      "image": "linruhaiImg.jpg"
+    },
+    {
+      "id": "贾敏",
+      "group": "林府",
+      "family": "林府",
+      "description": "林黛玉之母，贾母之女，早逝。",
+      "image": "jiaminImg.jpg"
+    },
+    {
+      "id": "赵姨娘",
+      "group": "贾府",
+      "family": "贾府",
+      "description": "贾政的妾室，贾环、贾探春之母，心狠手辣，经常挑拨离间。",
+      "image": "zhaoyiniangImg.jpg"
+    },
+    {
+      "id": "周瑞家的",
+      "group": "贾府仆人",
+      "family": "贾府",
+      "description": "贾府管事媳妇，负责传递消息，为人圆滑。",
+      "image": "zhouruijiadeImg.jpg"
+    },
+    {
+      "id": "紫鹃",
+      "group": "丫鬟",
+      "family": "贾府",
+      "description": "林黛玉的贴身丫鬟，忠心耿耿，曾试探贾宝玉对林黛玉的感情。",
+      "image": "zijuanImg.jpg"
+    },
+    {
+      "id": "雪雁",
+      "group": "丫鬟",
+      "family": "贾府",
+      "description": "林黛玉的丫鬟，随林黛玉一同来到贾府。",
+      "image": "xueyanImg.jpg"
+    },
+    {
+      "id": "宝珠",
+      "group": "丫鬟",
+      "family": "贾府",
+      "description": "薛宝钗的贴身丫鬟，为人精明能干。",
+      "image": "baozhuImg.jpg"
+    },
+    {
+      "id": "莺儿",
+      "group": "丫鬟",
+      "family": "贾府",
+      "description": "薛宝钗的丫鬟，伶俐乖巧。",
+      "image": "yingerImg.jpg"
+    },
+    {
+      "id": "平儿",
+      "group": "丫鬟",
+      "family": "贾府",
+      "description": "王熙凤的贴身丫鬟，为人善良聪明，深得王熙凤信任。",
+      "image": "pingerImg.jpg"
+    },
+    {
+      "id": "小红",
+      "group": "丫鬟",
+      "family": "贾府",
+      "description": "贾府丫鬟，曾服侍过贾宝玉，后被指给贾芸为妻。",
+      "image": "xiaohongImg.jpg"
+    },
+    {
+      "id": "金桂",
+      "group": "薛府",
+      "family": "薛府",
+      "description": "薛蟠的妻子，泼辣刁蛮，与薛家人关系紧张。",
+      "image": "jinguiImg.jpg"
+    },
+    {
+      "id": "夏金桂",
+      "group": "薛府",
+      "family": "薛府",
+      "description": "薛蟠的妻子，泼辣刁蛮，与薛家人关系紧张。",
+      "image": "xiajinguiImg.jpg"
+    },
+    {
+      "id": "尤氏",
+      "group": "贾府",
+      "family": "贾府",
+      "description": "贾珍之妻，秦可卿的婆婆，为人和善，但地位不高。",
+      "image": "youshiImg.jpg"
+    },
+    {
+      "id": "尤二姐",
+      "group": "其他",
+      "family": "尤家",
+      "description": "尤氏的妹妹，被贾琏骗娶为妾，后自杀身亡。",
+      "image": "youerjieImg.jpg"
+    },
+    {
+      "id": "尤三姐",
+      "group": "其他",
+      "family": "尤家",
+      "description": "尤氏的妹妹，性格刚烈，爱慕柳湘莲，后自刎而死。",
+      "image": "yousanjieImg.jpg"
+    },
+    {
+      "id": "贾珠",
+      "group": "贾府",
+      "family": "贾府",
+      "description": "贾政之子，贾宝玉之兄，早逝。",
+      "image": "jiazhuImg.jpg"
+    },
+    {
+      "id": "贾代善",
+      "group": "贾府长辈",
+      "family": "贾府",
+      "description": "贾母之夫，贾赦、贾政之父，早逝。",
+      "image": "jiadaishanImg.jpg"
+    },
+    {
+      "id": "贾代化",
+      "group": "贾府长辈",
+      "family": "贾府",
+      "description": "贾代善之兄，贾珍之父，早逝。",
+      "image": "jiadaihuaImg.jpg"
+    },
+    {
+      "id": "王子腾",
+      "group": "王家",
+      "family": "王家",
+      "description": "王夫人、薛姨妈之兄，为朝廷重臣。",
+      "image": "wangzitengImg.jpg"
+    },
+    {
+      "id": "王仁",
+      "group": "王家",
+      "family": "王家",
+      "description": "王夫人之兄，曾欲娶林黛玉。",
+      "image": "wangrenImg.jpg"
+    },
+    {
+      "id": "贾芹",
+      "group": "贾府旁支",
+      "family": "贾府",
+      "description": "贾府旁支子弟，曾向王熙凤借钱。",
+      "image": "jiaqinImg.jpg"
+    },
+    {
+      "id": "贾璜",
+      "group": "贾府旁支",
+      "family": "贾府",
+      "description": "贾府旁支子弟，曾在宁国府任职。",
+      "image": "jiahuangImg.jpg"
+    },
+    {
+      "id": "贾珩",
+      "group": "贾府旁支",
+      "family": "贾府",
+      "description": "贾府旁支子弟。",
+      "image": "jiahengImg.jpg"
+    },
+    {
+      "id": "贾琮",
+      "group": "贾府",
+      "family": "贾府",
+      "description": "贾赦之庶子。",
+      "image": "jiacongImg.jpg"
+    },
+    {
+      "id": "贾瑞",
+      "group": "贾府旁支",
+      "family": "贾府",
+      "description": "贾府旁支子弟，曾调戏王熙凤，后因病而亡。",
+      "image": "jiaruiImg.jpg"
+    },
+    {
+      "id": "贾巧姐",
+      "group": "贾府",
+      "family": "贾府",
+      "description": "王熙凤与贾琏之女，贾府衰败后被卖为人妾。",
+      "image": "jiaqiaojieImg.jpg"
+    },
+    {
+      "id": "李纹",
+      "group": "其他",
+      "family": "李家",
+      "description": "李纨的妹妹。",
+      "image": "liwenImg.jpg"
+    },
+    {
+      "id": "李绮",
+      "group": "其他",
+      "family": "李家",
+      "description": "李纨的妹妹。",
+      "image": "liqiImg.jpg"
+    },
+    {
+      "id": "邢岫烟",
+      "group": "其他",
+      "family": "邢家",
+      "description": "邢夫人的侄女，被安排嫁给卫若兰，后守寡。",
+      "image": "xingxiuyanImg.jpg"
+    },
+    {
+      "id": "卫若兰",
+      "group": "其他",
+      "family": "卫家",
+      "description": "邢岫烟的丈夫，早逝。",
+      "image": "weiruolanImg.jpg"
+    }
+  ],
+  "links": [
+    {
+      "source": "贾宝玉",
+      "target": "林黛玉",
+      "value": 10,
+      "type": "恋爱",
+      "description": "两人青梅竹马，互生情愫，但最终未能在一起"
+    },
+    {
+      "source": "贾宝玉",
+      "target": "薛宝钗",
+      "value": 8,
+      "type": "婚姻",
+      "description": "两人被家族安排成婚，金玉良缘"
+    },
+    {
+      "source": "贾宝玉",
+      "target": "贾政",
+      "value": 6,
+      "type": "家庭",
+      "description": "父子关系，但理念不合，经常冲突"
+    },
+    {
+      "source": "贾宝玉",
+      "target": "王夫人",
+      "value": 7,
+      "type": "家庭",
+      "description": "母子关系，王夫人疼爱但也严格管教宝玉"
+    },
+    {
+      "source": "贾宝玉",
+      "target": "贾母",
+      "value": 9,
+      "type": "家庭",
+      "description": "祖孙关系，贾母极其疼爱宝玉"
+    },
+    {
+      "source": "贾宝玉",
+      "target": "袭人",
+      "value": 7,
+      "type": "主仆",
+      "description": "主仆关系，袭人是宝玉的贴身丫鬟，关系亲密"
+    },
+    {
+      "source": "贾宝玉",
+      "target": "晴雯",
+      "value": 7,
+      "type": "主仆",
+      "description": "主仆关系，晴雯性格刚烈，宝玉很欣赏她"
+    },
+    {
+      "source": "贾宝玉",
+      "target": "麝月",
+      "value": 5,
+      "type": "主仆",
+      "description": "主仆关系，麝月是宝玉房中的丫鬟"
+    },
+    {
+      "source": "贾宝玉",
+      "target": "贾环",
+      "value": 3,
+      "type": "家庭",
+      "description": "兄弟关系，但贾环嫉妒宝玉，曾设计害他"
+    },
+    {
+      "source": "贾宝玉",
+      "target": "贾兰",
+      "value": 4,
+      "type": "家庭",
+      "description": "叔侄关系，宝玉疼爱贾兰"
+    },
+    {
+      "source": "贾宝玉",
+      "target": "史湘云",
+      "value": 6,
+      "type": "社交",
+      "description": "表兄妹关系，两人关系亲密"
+    },
+    {
+      "source": "贾宝玉",
+      "target": "妙玉",
+      "value": 5,
+      "type": "社交",
+      "description": "两人有精神共鸣，惺惺相惜"
+    },
+    {
+      "source": "林黛玉",
+      "target": "贾母",
+      "value": 8,
+      "type": "家庭",
+      "description": "祖孙关系，贾母疼爱黛玉"
+    },
+    {
+      "source": "林黛玉",
+      "target": "王夫人",
+      "value": 4,
+      "type": "家庭",
+      "description": "婶侄关系，王夫人对黛玉表面和善"
+    },
+    {
+      "source": "林黛玉",
+      "target": "薛宝钗",
+      "value": 6,
+      "type": "社交",
+      "description": "闺中好友，但也是情敌，性格互补"
+    },
+    {
+      "source": "林黛玉",
+      "target": "史湘云",
+      "value": 6,
+      "type": "社交",
+      "description": "闺中好友，关系亲密"
+    },
+    {
+      "source": "林黛玉",
+      "target": "贾元春",
+      "value": 4,
+      "type": "社交",
+      "description": "姑侄关系，元春回府省亲时见过面"
+    },
+    {
+      "source": "林黛玉",
+      "target": "贾探春",
+      "value": 5,
+      "type": "社交",
+      "description": "姑侄关系，两人都有文学才华"
+    },
+    {
+      "source": "林黛玉",
+      "target": "紫鹃",
+      "value": 7,
+      "type": "主仆",
+      "description": "主仆关系，紫鹃忠心耿耿地服侍黛玉"
+    },
+    {
+      "source": "林黛玉",
+      "target": "雪雁",
+      "value": 5,
+      "type": "主仆",
+      "description": "主仆关系，雪雁随黛玉一同来到贾府"
+    },
+    {
+      "source": "林黛玉",
+      "target": "林如海",
+      "value": 8,
+      "type": "家庭",
+      "description": "父女关系，林如海早逝"
+    },
+    {
+      "source": "林黛玉",
+      "target": "贾敏",
+      "value": 8,
+      "type": "家庭",
+      "description": "母女关系，贾敏早逝"
+    },
+    {
+      "source": "薛宝钗",
+      "target": "薛姨妈",
+      "value": 8,
+      "type": "家庭",
+      "description": "母女关系，薛姨妈疼爱宝钗"
+    },
+    {
+      "source": "薛宝钗",
+      "target": "薛蟠",
+      "value": 6,
+      "type": "家庭",
+      "description": "兄妹关系，性格迥异"
+    },
+    {
+      "source": "薛宝钗",
+      "target": "王夫人",
+      "value": 7,
+      "type": "社交",
+      "description": "姨侄关系，王夫人喜欢宝钗"
+    },
+    {
+      "source": "薛宝钗",
+      "target": "贾母",
+      "value": 7,
+      "type": "社交",
+      "description": "晚辈与长辈，贾母喜欢宝钗的稳重"
+    },
+    {
+      "source": "薛宝钗",
+      "target": "宝珠",
+      "value": 7,
+      "type": "主仆",
+      "description": "主仆关系，宝珠是宝钗的贴身丫鬟"
+    },
+    {
+      "source": "薛宝钗",
+      "target": "莺儿",
+      "value": 6,
+      "type": "主仆",
+      "description": "主仆关系，莺儿伶俐乖巧"
+    },
+    {
+      "source": "王熙凤",
+      "target": "贾琏",
+      "value": 8,
+      "type": "婚姻",
+      "description": "夫妻关系，但贾琏常在外面拈花惹草"
+    },
+    {
+      "source": "王熙凤",
+      "target": "王夫人",
+      "value": 7,
+      "type": "家庭",
+      "description": "婆媳关系，也是亲戚关系"
+    },
+    {
+      "source": "王熙凤",
+      "target": "贾母",
+      "value": 7,
+      "type": "家庭",
+      "description": "婆媳关系，贾母喜欢王熙凤的能干"
+    },
+    {
+      "source": "王熙凤",
+      "target": "平儿",
+      "value": 8,
+      "type": "主仆",
+      "description": "主仆关系，平儿是王熙凤的心腹"
+    },
+    {
+      "source": "王熙凤",
+      "target": "贾巧姐",
+      "value": 8,
+      "type": "家庭",
+      "description": "母女关系"
+    },
+    {
+      "source": "王熙凤",
+      "target": "尤二姐",
+      "value": 3,
+      "type": "社交",
+      "description": "情敌关系，王熙凤设计害死尤二姐"
+    },
+    {
+      "source": "王熙凤",
+      "target": "贾瑞",
+      "value": 3,
+      "type": "社交",
+      "description": "王熙凤设计整治调戏她的贾瑞"
+    },
+    {
+      "source": "王熙凤",
+      "target": "刘姥姥",
+      "value": 5,
+      "type": "社交",
+      "description": "王熙凤接济刘姥姥"
+    },
+    {
+      "source": "贾元春",
+      "target": "贾政",
+      "value": 7,
+      "type": "家庭",
+      "description": "父女关系"
+    },
+    {
+      "source": "贾元春",
+      "target": "王夫人",
+      "value": 7,
+      "type": "家庭",
+      "description": "母女关系"
+    },
+    {
+      "source": "贾元春",
+      "target": "贾母",
+      "value": 8,
+      "type": "家庭",
+      "description": "祖孙关系"
+    },
+    {
+      "source": "贾元春",
+      "target": "贾迎春",
+      "value": 5,
+      "type": "家庭",
+      "description": "姐妹关系"
+    },
+    {
+      "source": "贾元春",
+      "target": "贾探春",
+      "value": 5,
+      "type": "家庭",
+      "description": "姐妹关系"
+    },
+    {
+      "source": "贾元春",
+      "target": "贾惜春",
+      "value": 5,
+      "type": "家庭",
+      "description": "姐妹关系"
+    },
+    {
+      "source": "贾探春",
+      "target": "贾政",
+      "value": 6,
+      "type": "家庭",
+      "description": "父女关系"
+    },
+    {
+      "source": "贾探春",
+      "target": "赵姨娘",
+      "value": 4,
+      "type": "家庭",
+      "description": "母女关系，但关系不睦"
+    },
+    {
+      "source": "贾探春",
+      "target": "贾母",
+      "value": 7,
+      "type": "家庭",
+      "description": "祖孙关系"
+    },
+    {
+      "source": "贾探春",
+      "target": "贾迎春",
+      "value": 5,
+      "type": "家庭",
+      "description": "姐妹关系"
+    },
+    {
+      "source": "贾探春",
+      "target": "贾惜春",
+      "value": 5,
+      "type": "家庭",
+      "description": "姐妹关系"
+    },
+    {
+      "source": "贾探春",
+      "target": "贾环",
+      "value": 4,
+      "type": "家庭",
+      "description": "同母异父的兄妹关系"
+    },
+    {
+      "source": "史湘云",
+      "target": "贾母",
+      "value": 7,
+      "type": "家庭",
+      "description": "祖孙关系，贾母是史湘云的姑祖母"
+    },
+    {
+      "source": "史湘云",
+      "target": "薛宝钗",
+      "value": 6,
+      "type": "社交",
+      "description": "闺中好友"
+    },
+    {
+      "source": "妙玉",
+      "target": "贾母",
+      "value": 4,
+      "type": "社交",
+      "description": "贾母资助栊翠庵"
+    },
+    {
+      "source": "妙玉",
+      "target": "林黛玉",
+      "value": 5,
+      "type": "社交",
+      "description": "两人都孤高清雅，有共同语言"
+    },
+    {
+      "source": "贾迎春",
+      "target": "贾赦",
+      "value": 5,
+      "type": "家庭",
+      "description": "父女关系"
+    },
+    {
+      "source": "贾迎春",
+      "target": "贾母",
+      "value": 6,
+      "type": "家庭",
+      "description": "祖孙关系"
+    },
+    {
+      "source": "贾迎春",
+      "target": "贾惜春",
+      "value": 5,
+      "type": "家庭",
+      "description": "姐妹关系"
+    },
+    {
+      "source": "贾惜春",
+      "target": "贾珍",
+      "value": 5,
+      "type": "家庭",
+      "description": "兄妹关系"
+    },
+    {
+      "source": "贾惜春",
+      "target": "贾母",
+      "value": 6,
+      "type": "家庭",
+      "description": "祖孙关系"
+    },
+    {
+      "source": "李纨",
+      "target": "贾珠",
+      "value": 8,
+      "type": "婚姻",
+      "description": "夫妻关系，但贾珠早逝"
+    },
+    {
+      "source": "李纨",
+      "target": "贾兰",
+      "value": 9,
+      "type": "家庭",
+      "description": "母子关系"
+    },
+    {
+      "source": "李纨",
+      "target": "贾政",
+      "value": 6,
+      "type": "家庭",
+      "description": "婆媳关系"
+    },
+    {
+      "source": "李纨",
+      "target": "王夫人",
+      "value": 6,
+      "type": "家庭",
+      "description": "婆媳关系"
+    },
+    {
+      "source": "李纨",
+      "target": "贾母",
+      "value": 7,
+      "type": "家庭",
+      "description": "婆媳关系"
+    },
+    {
+      "source": "秦可卿",
+      "target": "贾蓉",
+      "value": 7,
+      "type": "婚姻",
+      "description": "夫妻关系"
+    },
+    {
+      "source": "秦可卿",
+      "target": "贾珍",
+      "value": 4,
+      "type": "家庭",
+      "description": "婆媳关系，但关系不正当"
+    },
+    {
+      "source": "秦可卿",
+      "target": "尤氏",
+      "value": 5,
+      "type": "家庭",
+      "description": "婆媳关系"
+    },
+    {
+      "source": "巧姐",
+      "target": "贾琏",
+      "value": 6,
+      "type": "家庭",
+      "description": "父女关系"
+    },
+    {
+      "source": "香菱",
+      "target": "薛蟠",
+      "value": 6,
+      "type": "主仆",
+      "description": "主仆关系，香菱是薛蟠的妾室"
+    },
+    {
+      "source": "香菱",
+      "target": "薛宝钗",
+      "value": 6,
+      "type": "社交",
+      "description": "香菱向宝钗学诗"
+    },
+    {
+      "source": "香菱",
+      "target": "甄士隐",
+      "value": 5,
+      "type": "家庭",
+      "description": "香菱原是甄士隐的养女"
+    },
+    {
+      "source": "香菱",
+      "target": "柳湘莲",
+      "value": 6,
+      "type": "恋爱",
+      "description": "两人有婚约，但未能成婚"
+    },
+    {
+      "source": "袭人",
+      "target": "王夫人",
+      "value": 6,
+      "type": "主仆",
+      "description": "王夫人派袭人服侍宝玉，袭人常向王夫人报告宝玉的情况"
+    },
+    {
+      "source": "袭人",
+      "target": "晴雯",
+      "value": 4,
+      "type": "社交",
+      "description": "同事关系，但有竞争"
+    },
+    {
+      "source": "袭人",
+      "target": "麝月",
+      "value": 5,
+      "type": "社交",
+      "description": "同事关系，关系较好"
+    },
+    {
+      "source": "鸳鸯",
+      "target": "贾母",
+      "value": 8,
+      "type": "主仆",
+      "description": "主仆关系，鸳鸯是贾母的贴身丫鬟"
+    },
+    {
+      "source": "鸳鸯",
+      "target": "贾赦",
+      "value": 2,
+      "type": "社交",
+      "description": "贾赦想纳鸳鸯为妾，被拒绝"
+    },
+    {
+      "source": "晴雯",
+      "target": "麝月",
+      "value": 5,
+      "type": "社交",
+      "description": "同事关系"
+    },
+    {
+      "source": "晴雯",
+      "target": "王夫人",
+      "value": 2,
+      "type": "主仆",
+      "description": "王夫人不喜欢晴雯，最终将她赶出府"
+    },
+    {
+      "source": "贾母",
+      "target": "贾赦",
+      "value": 6,
+      "type": "家庭",
+      "description": "母子关系"
+    },
+    {
+      "source": "贾母",
+      "target": "贾政",
+      "value": 7,
+      "type": "家庭",
+      "description": "母子关系"
+    },
+    {
+      "source": "贾母",
+      "target": "王夫人",
+      "value": 7,
+      "type": "家庭",
+      "description": "婆媳关系"
+    },
+    {
+      "source": "贾母",
+      "target": "邢夫人",
+      "value": 5,
+      "type": "家庭",
+      "description": "婆媳关系"
+    },
+    {
+      "source": "贾政",
+      "target": "王夫人",
+      "value": 7,
+      "type": "婚姻",
+      "description": "夫妻关系"
+    },
+    {
+      "source": "贾政",
+      "target": "赵姨娘",
+      "value": 5,
+      "type": "婚姻",
+      "description": "贾政的妾室"
+    },
+    {
+      "source": "贾政",
+      "target": "贾珠",
+      "value": 7,
+      "type": "家庭",
+      "description": "父子关系"
+    },
+    {
+      "source": "贾政",
+      "target": "贾环",
+      "value": 5,
+      "type": "家庭",
+      "description": "父子关系"
+    },
+    {
+      "source": "贾赦",
+      "target": "邢夫人",
+      "value": 5,
+      "type": "婚姻",
+      "description": "夫妻关系"
+    },
+    {
+      "source": "贾赦",
+      "target": "贾琏",
+      "value": 6,
+      "type": "家庭",
+      "description": "父子关系"
+    },
+    {
+      "source": "王夫人",
+      "target": "贾环",
+      "value": 3,
+      "type": "家庭",
+      "description": "继母关系，王夫人不喜欢贾环"
+    },
+    {
+      "source": "王夫人",
+      "target": "薛姨妈",
+      "value": 7,
+      "type": "家庭",
+      "description": "姐妹关系"
+    },
+    {
+      "source": "王夫人",
+      "target": "王子腾",
+      "value": 6,
+      "type": "家庭",
+      "description": "兄妹关系"
+    },
+    {
+      "source": "邢夫人",
+      "target": "贾琏",
+      "value": 5,
+      "type": "家庭",
+      "description": "母子关系"
+    },
+    {
+      "source": "贾珍",
+      "target": "尤氏",
+      "value": 6,
+      "type": "婚姻",
+      "description": "夫妻关系"
+    },
+    {
+      "source": "贾珍",
+      "target": "贾蓉",
+      "value": 6,
+      "type": "家庭",
+      "description": "父子关系"
+    },
+    {
+      "source": "贾琏",
+      "target": "尤二姐",
+      "value": 6,
+      "type": "婚姻",
+      "description": "贾琏骗娶尤二姐为妾"
+    },
+    {
+      "source": "贾琏",
+      "target": "平儿",
+      "value": 6,
+      "type": "主仆",
+      "description": "主仆关系，但关系暧昧"
+    },
+    {
+      "source": "贾蓉",
+      "target": "尤氏",
+      "value": 5,
+      "type": "家庭",
+      "description": "母子关系"
+    },
+    {
+      "source": "贾环",
+      "target": "赵姨娘",
+      "value": 7,
+      "type": "家庭",
+      "description": "母子关系"
+    },
+    {
+      "source": "贾兰",
+      "target": "贾珠",
+      "value": 6,
+      "type": "家庭",
+      "description": "父子关系，但贾珠早逝"
+    },
+    {
+      "source": "贾芸",
+      "target": "王熙凤",
+      "value": 4,
+      "type": "社交",
+      "description": "王熙凤帮助贾芸承包工程"
+    },
+    {
+      "source": "贾芸",
+      "target": "小红",
+      "value": 5,
+      "type": "恋爱",
+      "description": "两人最终成婚"
+    },
+    {
+      "source": "薛姨妈",
+      "target": "薛蟠",
+      "value": 7,
+      "type": "家庭",
+      "description": "母子关系"
+    },
+    {
+      "source": "薛蟠",
+      "target": "夏金桂",
+      "value": 5,
+      "type": "婚姻",
+      "description": "夫妻关系，但关系不睦"
+    },
+    {
+      "source": "甄士隐",
+      "target": "贾雨村",
+      "value": 5,
+      "type": "社交",
+      "description": "甄士隐资助过贾雨村"
+    },
+    {
+      "source": "刘姥姥",
+      "target": "贾母",
+      "value": 5,
+      "type": "社交",
+      "description": "贾母喜欢刘姥姥的风趣"
+    },
+    {
+      "source": "柳湘莲",
+      "target": "尤三姐",
+      "value": 6,
+      "type": "恋爱",
+      "description": "尤三姐爱慕柳湘莲，但最终以悲剧收场"
+    },
+    {
+      "source": "柳湘莲",
+      "target": "薛蟠",
+      "value": 4,
+      "type": "社交",
+      "description": "朋友关系，但因性格不合断交"
+    },
+    {
+      "source": "蒋玉菡",
+      "target": "贾宝玉",
+      "value": 5,
+      "type": "社交",
+      "description": "朋友关系"
+    },
+    {
+      "source": "林如海",
+      "target": "贾敏",
+      "value": 8,
+      "type": "婚姻",
+      "description": "夫妻关系"
+    },
+    {
+      "source": "贾敏",
+      "target": "贾母",
+      "value": 7,
+      "type": "家庭",
+      "description": "母女关系"
+    },
+    {
+      "source": "赵姨娘",
+      "target": "王夫人",
+      "value": 2,
+      "type": "社交",
+      "description": "主仆关系，但关系紧张"
+    },
+    {
+      "source": "周瑞家的",
+      "target": "王熙凤",
+      "value": 5,
+      "type": "主仆",
+      "description": "主仆关系"
+    },
+    {
+      "source": "紫鹃",
+      "target": "贾宝玉",
+      "value": 5,
+      "type": "社交",
+      "description": "紫鹃曾试探贾宝玉对林黛玉的感情"
+    },
+    {
+      "source": "平儿",
+      "target": "袭人",
+      "value": 5,
+      "type": "社交",
+      "description": "朋友关系"
+    },
+    {
+      "source": "尤氏",
+      "target": "尤二姐",
+      "value": 6,
+      "type": "家庭",
+      "description": "姐妹关系"
+    },
+    {
+      "source": "尤氏",
+      "target": "尤三姐",
+      "value": 6,
+      "type": "家庭",
+      "description": "姐妹关系"
+    },
+    {
+      "source": "尤二姐",
+      "target": "尤三姐",
+      "value": 7,
+      "type": "家庭",
+      "description": "姐妹关系"
+    },
+    {
+      "source": "贾珠",
+      "target": "王夫人",
+      "value": 7,
+      "type": "家庭",
+      "description": "母子关系"
+    },
+    {
+      "source": "贾代善",
+      "target": "贾母",
+      "value": 8,
+      "type": "婚姻",
+      "description": "夫妻关系"
+    },
+    {
+      "source": "贾代善",
+      "target": "贾赦",
+      "value": 7,
+      "type": "家庭",
+      "description": "父子关系"
+    },
+    {
+      "source": "贾代善",
+      "target": "贾政",
+      "value": 7,
+      "type": "家庭",
+      "description": "父子关系"
+    },
+    {
+      "source": "王子腾",
+      "target": "薛姨妈",
+      "value": 6,
+      "type": "家庭",
+      "description": "兄妹关系"
+    },
+    {
+      "source": "王仁",
+      "target": "王夫人",
+      "value": 5,
+      "type": "家庭",
+      "description": "兄妹关系"
+    },
+    {
+      "source": "王仁",
+      "target": "林黛玉",
+      "value": 3,
+      "type": "社交",
+      "description": "王仁曾想娶林黛玉"
+    },
+    {
+      "source": "邢岫烟",
+      "target": "邢夫人",
+      "value": 5,
+      "type": "家庭",
+      "description": "邢岫烟是邢夫人的侄女"
+    },
+    {
+      "source": "邢岫烟",
+      "target": "卫若兰",
+      "value": 6,
+      "type": "婚姻",
+      "description": "夫妻关系，但卫若兰早逝"
+    }
+  ]
+}

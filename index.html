@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《红楼梦》人物关系可视化</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="py-3 mb-3 border-bottom">
+            <h1 class="text-center">《红楼梦》人物关系可视化</h1>
+        </header>
+        
+        <div class="row">
+            <!-- 控制面板 -->
+            <div class="col-md-3 control-panel">
+                <div class="card mb-3">
+                    <div class="card-header">筛选控制</div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="search" class="form-label">搜索人物</label>
+                            <input type="text" class="form-control" id="search" placeholder="输入人物名称">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">按关系类型筛选</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="家庭" id="family-filter" checked>
+                                <label class="form-check-label" for="family-filter">家庭关系</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="恋爱" id="romance-filter" checked>
+                                <label class="form-check-label" for="romance-filter">恋爱关系</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="社交" id="social-filter" checked>
+                                <label class="form-check-label" for="social-filter">社交关系</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="主仆" id="master-servant-filter" checked>
+                                <label class="form-check-label" for="master-servant-filter">主仆关系</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">按家族筛选</label>
+                            <select class="form-select" id="family-select">
+                                <option value="all" selected>全部家族</option>
+                                <option value="主角">主角</option>
+                                <option value="金陵十二钗正册">金陵十二钗正册</option>
+                                <option value="金陵十二钗副册">金陵十二钗副册</option>
+                                <option value="贾府">贾府</option>
+                                <option value="林府">林府</option>
+                                <option value="薛府">薛府</option>
+                                <option value="次要角色">次要角色</option>
+                            </select>
+                        </div>
+                        <button id="reset-view" class="btn btn-primary">重置视图</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 主视图区域 -->
+            <div class="col-md-9">
+                <div id="graph-container">
+                    <svg id="graph"></svg>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 信息面板 -->
+        <div class="info-panel" id="info-panel">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="character-name mb-0">人物信息</h5>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary me-2" id="reset-highlight">重置高亮</button>
+                        <button type="button" class="btn-close" aria-label="Close" id="close-info"></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="character-image mb-3"></div>
+                    <p class="character-description"></p>
+                    <h6>重要关系</h6>
+                    <ul class="character-relations"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 图例区域 -->
+    <div class="container-fluid mt-3 mb-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">人物分组图例</div>
+                    <div class="card-body">
+                        <div id="group-legend" class="d-flex flex-wrap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

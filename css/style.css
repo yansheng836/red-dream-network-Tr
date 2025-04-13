@@ -1,0 +1,186 @@
+/* 全局样式 */
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* 图形容器样式 */
+#graph-container {
+    width: 100%;
+    height: 80vh;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+#graph {
+    width: 100%;
+    height: 100%;
+}
+
+/* 控制面板样式 */
+.control-panel {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* 卡片样式统一 */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: none;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-weight: 600;
+}
+
+/* 信息面板样式 */
+.info-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.character-image {
+    width: 100%;
+    height: 150px;
+    background-color: #f0f0f0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+/* 节点和连线样式 */
+.node {
+    cursor: pointer;
+}
+
+.node circle {
+    stroke: #fff;
+    stroke-width: 2px;
+}
+
+.node text {
+    font-size: 12px;
+    fill: #333;
+}
+
+.link {
+    stroke-opacity: 0.6;
+    cursor: pointer;
+}
+
+/* 节点悬停提示样式 */
+.tooltip {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+    max-width: 200px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 关系类型颜色 - 更新为与JS中定义一致的颜色 */
+.family-link {
+    stroke: #FF9F1C; /* 温暖的橙色 - 家庭关系 */
+}
+
+.romance-link {
+    stroke: #FB6376; /* 粉红色 - 恋爱关系 */
+}
+
+.social-link {
+    stroke: #118AB2; /* 蓝色 - 社交关系 */
+}
+
+/* 图例样式 */
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    margin-bottom: 8px;
+}
+
+.color-box {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    margin-right: 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.master-servant-link {
+    stroke: #06D6A0; /* 绿色 - 主仆关系 */
+}
+
+.特殊-link {
+    stroke: #9C27B0; /* 紫色 - 特殊关系 */
+}
+
+/* 人物组别颜色 - 更新为与JS中定义一致的颜色 */
+.main-character {
+    fill: #E63946; /* 主角 */
+}
+
+.jinling-twelve-primary {
+    fill: #9D4EDD; /* 金陵十二钗正册 */
+}
+
+.jinling-twelve-secondary {
+    fill: #C77DFF; /* 金陵十二钗副册 */
+}
+
+.jia-family {
+    fill: #457B9D; /* 贾府 */
+}
+
+.lin-family {
+    fill: #1D3557; /* 林府 */
+}
+
+.xue-family {
+    fill: #F1C453; /* 薛府 */
+}
+
+.minor-character {
+    fill: #A8DADC; /* 次要角色 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .col-md-3, .col-md-9 {
+        width: 100%;
+    }
+    
+    .info-panel {
+        width: 90%;
+        left: 5%;
+        right: 5%;
+    }
+    
+    #graph-container {
+        height: 60vh;
+    }
+}
