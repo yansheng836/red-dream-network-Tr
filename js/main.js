@@ -218,8 +218,45 @@ function dragged(event, d) {
 
 function dragEnded(event, d) {
     if (!event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
+    
+    // 检查是否按下了Shift键，如果是则保持节点固定
+    if (event.sourceEvent.shiftKey) {
+        // 保持节点固定在当前位置
+        // 添加视觉提示，表示节点已固定
+        d3.select(event.sourceEvent.target.parentNode)
+            .select('circle')
+            .classed('fixed-node', true)
+            .attr('stroke', '#ff0000')
+            .attr('stroke-width', 3);
+            
+        // 显示提示信息
+        tooltip.transition()
+            .duration(200)
+            .style('opacity', .9);
+        tooltip.html(`<strong>${d.id}</strong> 已固定位置<br/>拖动时按Shift+拖动可解除固定`)
+            .style('left', (event.sourceEvent.pageX + 10) + 'px')
+            .style('top', (event.sourceEvent.pageY - 28) + 'px');
+        setTimeout(() => {
+            tooltip.transition().duration(500).style('opacity', 0);
+        }, 2000);
+    } else {
+        // 如果节点之前已经固定，且当前没有按Shift键，则解除固定
+        if (d.fx !== null && d.fy !== null) {
+            d.fx = null;
+            d.fy = null;
+            
+            // 恢复节点样式
+            d3.select(event.sourceEvent.target.parentNode)
+                .select('circle')
+                .classed('fixed-node', false)
+                .attr('stroke', '#fff')
+                .attr('stroke-width', d => d.group === '次要角色' ? 1 : 2);
+        } else {
+            // 正常情况下，拖动结束后解除固定
+            d.fx = null;
+            d.fy = null;
+        }
+    }
 }
 
 // 节点点击处理
@@ -243,19 +280,15 @@ function showInfoPanel(node) {
     
     // 设置图片（如果有）
     if (node.image) {
-        // 尝试使用JSON中的图片名称
-        let imgPath = `images/${node.image}`;
+        // 直接使用中文名称作为图片文件名
+        const imgPath = `images/${node.id}.jpg`;
         
-        // 如果JSON中的图片名称是英文名+Img.jpg格式，尝试转换为中文名
-        if (node.image.includes('Img.jpg')) {
-            // 从id获取中文名
-            const chineseName = node.id;
-            if (chineseName) {
-                imgPath = `images/${chineseName}.jpg`;
-            }
-        }
-        
-        characterImage.style.backgroundImage = `url('${imgPath}')`; 
+        // 设置背景图片
+        characterImage.style.backgroundImage = `url('${imgPath}')`;
+        characterImage.style.backgroundSize = 'cover';
+        characterImage.style.backgroundPosition = 'center';
+        characterImage.style.height = '200px';
+        characterImage.style.borderRadius = '8px';
         characterImage.textContent = '';
     } else {
         characterImage.style.backgroundImage = 'none';
@@ -525,8 +558,15 @@ function resetView() {
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
         checkbox.checked = false;
     });
-    // 家族筛选已移除
     document.getElementById('search').value = '';
+
+    // 解除所有节点的固定状态
+    if (graph && graph.nodes) {
+        graph.nodes.forEach(node => {
+            node.fx = null;
+            node.fy = null;
+        });
+    }
 
     // 重新渲染图形
     renderGraph(graph);
