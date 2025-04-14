@@ -18,11 +18,11 @@ const groupColors = {
 };
 
 const relationColors = {
-    '家庭': '#FF9F1C', // 温暖的橙色，代表家庭关系的温馨
-    '恋爱': '#FB6376', // 粉红色，代表浪漫关系
-    '社交': '#118AB2', // 蓝色，代表社交关系的理性
-    '主仆': '#06D6A0',  // 绿色，代表服务关系
-    '特殊': '#9C27B0'   // 紫色，代表特殊关系
+    '亲属': '#f7b55c', // 温暖的橙色，代表家庭关系的温馨，婚姻关系，亲子关系
+    '婚姻': '#de2f44', // 粉红色，代表浪漫关系
+    '社交': '#1154b2', // 蓝色，代表社交关系的理性
+    '主仆': '#98d606',  // 绿色，代表服务关系
+    '特殊': '#d900ff'   // 紫色，代表特殊关系
 };
 
 // 初始化函数
@@ -110,10 +110,10 @@ function renderGraph(data) {
 
     // 创建力导向模拟
     simulation = d3.forceSimulation(data.nodes)
-        .force('link', d3.forceLink(data.links).id(d => d.id).distance(10)) // 减小连接距离
-        .force('charge', d3.forceManyBody().strength(-500)) // 减小节点间斥力
-        .force('center', d3.forceCenter(width / 2, height / 2).strength(0.15)) // 增加中心引力
-        .force('collide', d3.forceCollide().radius(30)) // 减小碰撞半径
+        .force('link', d3.forceLink(data.links).id(d => d.id).distance(100)) // 减小连接距离
+        .force('charge', d3.forceManyBody().strength(-200)) // 减小节点间斥力
+        .force('center', d3.forceCenter(width / 2, height / 2).strength(0.01)) // 增加中心引力
+        .force('collide', d3.forceCollide().radius(20)) // 减小碰撞半径
         .force('x', d3.forceX(width / 2).strength(0.1)) // 添加X方向引力
         .force('y', d3.forceY(height / 2).strength(0.1)); // 添加Y方向引力
 
@@ -276,7 +276,7 @@ function showInfoPanel(node) {
     relations.slice(0, 10).forEach(relation => {
         const li = document.createElement('li');
         const relatedPerson = relation.source.id === node.id ? relation.target.id : relation.source.id;
-        li.innerHTML = `<strong>${relatedPerson}</strong>: ${relation.description || relation.type}关系`;
+        li.innerHTML = `<strong>${relatedPerson}</strong>: ${relation.description || relation.type}`;
         characterRelations.appendChild(li);
     });
 
@@ -378,17 +378,14 @@ function handleLinkMouseOut() {
 }
 
 // 创建分组图例
+// 在createGroupLegend函数中添加关系类型图例的生成代码
 function createGroupLegend() {
     const legendContainer = document.getElementById('group-legend');
     
     // 清空容器
     legendContainer.innerHTML = '';
     
-    // 添加人物分组图例标题
-    const groupTitle = document.createElement('div');
-    groupTitle.className = 'w-100 mb-2';
-    groupTitle.innerHTML = '<strong>人物分组:</strong>';
-    legendContainer.appendChild(groupTitle);
+    // 不再添加人物分组标题
     
     // 定义要显示的分组（按照指定顺序）
     const displayGroups = [
@@ -420,11 +417,9 @@ function createGroupLegend() {
         }
     });
     
-    // 添加关系类型图例标题
-    const relationTitle = document.createElement('div');
-    relationTitle.className = 'w-100 mt-3 mb-2';
-    relationTitle.innerHTML = '<strong>关系类型:</strong>';
-    legendContainer.appendChild(relationTitle);
+    // 添加关系类型图例
+    const relationLegend = document.getElementById('relation-legend');
+    relationLegend.innerHTML = ''; // 清空容器
     
     // 为每种关系类型创建图例项
     Object.entries(relationColors).forEach(([relationType, color]) => {
@@ -440,7 +435,7 @@ function createGroupLegend() {
         
         legendItem.appendChild(colorBox);
         legendItem.appendChild(label);
-        legendContainer.appendChild(legendItem);
+        relationLegend.appendChild(legendItem);
     });
 }
 
@@ -586,7 +581,15 @@ function applyFilters() {
     let filteredLinks;
     if (selectedRelationTypes.length === 0) {
         // 如果没有选中任何关系类型，显示所有关系
-        filteredLinks = [...graph.links];
+        // 先停止当前模拟
+        if (simulation) simulation.stop();
+        // 重置选中状态
+        selectedNode = null;
+        // 关闭信息面板
+        document.getElementById('info-panel').style.display = 'none';
+        // 完全重新渲染图形
+        renderGraph(graph);
+        return; // 提前返回，避免执行后续代码
     } else {
         // 否则只显示选中的关系类型
         filteredLinks = graph.links.filter(link => 
@@ -615,27 +618,34 @@ function applyFilters() {
 function updateGraph(filteredData) {
     // 停止当前模拟
     simulation.stop();
-
-    // 更新连线
-    const link = container.selectAll('.link')
-        .data(filteredData.links, d => `${d.source.id || d.source}-${d.target.id || d.target}`);
-
-    link.exit().remove();
-
-    const linkEnter = link.enter().append('line')
+    
+    // 重置选中状态，避免筛选后状态错乱
+    if (selectedNode) {
+        selectedNode = null;
+        document.getElementById('info-panel').style.display = 'none';
+    }
+    
+    // 清空容器并重新创建元素，避免更新错误
+    container.selectAll('*').remove();
+    
+    // 创建连线
+    const link = container.append('g')
+        .attr('class', 'links')
+        .selectAll('line')
+        .data(filteredData.links)
+        .enter().append('line')
         .attr('class', d => `link ${d.type}-link`)
         .attr('stroke-width', d => Math.sqrt(d.value))
         .attr('stroke', d => relationColors[d.type] || '#999')
         .on('mouseover', handleLinkMouseOver)
         .on('mouseout', handleLinkMouseOut);
-
-    // 更新节点
-    const node = container.selectAll('.node')
-        .data(filteredData.nodes, d => d.id);
-
-    node.exit().remove();
-
-    const nodeEnter = node.enter().append('g')
+    
+    // 创建节点组
+    const node = container.append('g')
+        .attr('class', 'nodes')
+        .selectAll('.node')
+        .data(filteredData.nodes)
+        .enter().append('g')
         .attr('class', 'node')
         .call(d3.drag()
             .on('start', dragStarted)
@@ -644,23 +654,60 @@ function updateGraph(filteredData) {
         .on('click', handleNodeClick)
         .on('mouseover', handleNodeMouseOver)
         .on('mouseout', handleNodeMouseOut);
-
-    nodeEnter.append('circle')
+    
+    // 添加节点圆圈
+    node.append('circle')
         .attr('r', d => d.group === '次要角色' ? 7 : 10)
         .attr('fill', d => groupColors[d.group] || groupColors['次要角色'])
         .attr('stroke', '#fff')
         .attr('stroke-width', d => d.group === '次要角色' ? 1 : 2);
-
-    nodeEnter.append('text')
+    
+    // 添加节点文本
+    node.append('text')
         .attr('dy', d => d.group === '次要角色' ? 15 : 20)
         .attr('text-anchor', 'middle')
         .text(d => d.id)
         .attr('font-size', d => d.group === '次要角色' ? '8px' : '10px');
-
+    
     // 重启模拟
     simulation.nodes(filteredData.nodes);
     simulation.force('link').links(filteredData.links);
     simulation.alpha(1).restart();
+    
+    // 更新模拟的tick事件处理
+    simulation.on('tick', () => {
+        // 边界检测，防止节点移出可视区域
+        filteredData.nodes.forEach(d => {
+            // 为次要人物节点添加额外的中心引力
+            if (d.group === '次要角色') {
+                // 计算到中心的距离
+                const dx = d.x - width / 2;
+                const dy = d.y - height / 2;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                // 如果距离中心太远，施加额外引力
+                if (distance > Math.min(width, height) / 3) {
+                    d.x -= dx * 0.03;
+                    d.y -= dy * 0.03;
+                }
+            }
+            
+            // 边界约束，确保节点在容器内
+            const r = 15; // 节点半径加一些边距
+            d.x = Math.max(r, Math.min(width - r, d.x));
+            d.y = Math.max(r, Math.min(height - r, d.y));
+        });
+        
+        link
+            .attr('x1', d => d.source.x)
+            .attr('y1', d => d.source.y)
+            .attr('x2', d => d.target.x)
+            .attr('y2', d => d.target.y);
+
+        node
+            .attr('transform', d => `translate(${d.x},${d.y})`);
+    });
+
 }
 
 // 工具函数：防抖

@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>《红楼梦》人物关系可视化</title>
+    <title>《红楼梦》剧情人物关系可视化</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container-fluid">
-        <header class="py-3 mb-3 border-bottom">
-            <h1 class="text-center">《红楼梦》人物关系可视化</h1>
+        <header class="py-4 mb-3 border-bottom custom-header">
+            <div class="header-bg"></div>
+            <h1 class="text-center title-font">《红楼梦》剧情人物关系可视化</h1>
+            <p class="text-center subtitle">探索金陵十二钗与贾府众人的复杂关系网络</p>
         </header>
         
         <div class="row">
@@ -26,12 +28,12 @@
                         <div class="mb-3">
                             <label class="form-label">按关系类型筛选</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="家庭" id="family-filter">
-                                <label class="form-check-label" for="family-filter">家庭关系</label>
+                                <input class="form-check-input" type="checkbox" value="亲属" id="family-filter">
+                                <label class="form-check-label" for="family-filter">亲属关系</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="恋爱" id="romance-filter">
-                                <label class="form-check-label" for="romance-filter">恋爱关系</label>
+                                <input class="form-check-input" type="checkbox" value="婚姻" id="romance-filter">
+                                <label class="form-check-label" for="romance-filter">婚姻关系</label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="社交" id="social-filter">
@@ -40,6 +42,10 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="主仆" id="master-servant-filter">
                                 <label class="form-check-label" for="master-servant-filter">主仆关系</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="特殊" id="special-filter">
+                                <label class="form-check-label" for="special-filter">特殊关系</label>
                             </div>
                         </div>
 
@@ -73,19 +79,20 @@
                     <ul class="character-relations"></ul>
                 </div>
             </div>
+            <!-- 删除这里的重复图例 -->
         </div>
     </div>
     
     <!-- 图例区域 -->
     <div class="container-fluid mt-3 mb-4">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">人物分组图例</div>
-                    <div class="card-body">
-                        <div id="group-legend" class="d-flex flex-wrap"></div>
-                    </div>
-                </div>
+        <div class="legend-container custom-legend">
+            <div class="legend-group">
+                <div class="legend-title">人物分组</div>
+                <div class="legend-items" id="group-legend"></div>
+            </div>
+            <div class="legend-group">
+                <div class="legend-title">关系类型</div>
+                <div class="legend-items" id="relation-legend"></div>
             </div>
         </div>
     </div>
