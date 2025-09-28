@@ -1,0 +1,9 @@
+{
+    "h1-main-title": "《红楼梦》人物关系网络可视化",
+    "h1-main-desc": "探索金陵十二钗与贾府众人的复杂关系网络",
+    "section1-title": "项目简介",
+    "section1-content": "本项目通过可视化技术展示《红楼梦》中复杂的人物关系网络。使用外部JSON配置文件可以轻松修改页面内容，无需直接修改HTML代码。",
+    "section2-title": "技术实现",
+    "section2-content": "我们使用JavaScript的Fetch API动态加载JSON配置，并根据配置中的键值对将内容插入到对应的HTML元素中。这种方法使内容与表现分离，提高了项目的可维护性。",
+    "footer-text": "© 2025 《红楼梦》人物关系可视化项目组 | 基于外部JSON配置的动态内容加载"
+}
